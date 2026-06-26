@@ -4,10 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>مزون حفصه | طراحی و دوخت لباس</title>
+<title>مزون حفصه | لباس بومی قشم</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
 
 <style>
@@ -20,47 +18,73 @@ font-family:'Vazirmatn',sans-serif;
 }
 
 body{
-background:#faf8f5;
-color:#333;
+background:#faf7f2;
+color:#222;
 }
 
-header{
+/* ===== HEADER ===== */
+.hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1600&q=80");
-background-size:cover;
-background-position:center;
+background:url("images/hero.jpg") center/cover no-repeat;
+position:relative;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.45);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
 color:white;
+max-width:800px;
 padding:20px;
 }
 
 .hero h1{
-font-size:60px;
+font-size:70px;
+font-weight:900;
 margin-bottom:20px;
+text-shadow:0 10px 25px rgba(0,0,0,.5);
+}
+
+.hero .line{
+width:120px;
+height:3px;
+background:#c9a66b;
+margin:0 auto 25px;
+border-radius:10px;
 }
 
 .hero p{
 font-size:22px;
+line-height:2;
 margin-bottom:35px;
 }
 
 .btn{
-background:#c49b63;
+display:inline-block;
 padding:15px 40px;
-border-radius:40px;
-text-decoration:none;
+background:#1f4d36;
 color:white;
-font-size:18px;
+text-decoration:none;
+border-radius:40px;
 transition:.3s;
 }
 
 .btn:hover{
-background:#a77d47;
+background:#2f6c4d;
+transform:translateY(-3px);
 }
 
+/* ===== SECTIONS ===== */
 section{
 padding:80px 10%;
 }
@@ -69,10 +93,11 @@ padding:80px 10%;
 text-align:center;
 font-size:40px;
 margin-bottom:50px;
-color:#8b5e34;
+color:#1f4d36;
 }
 
-.cards{
+/* ===== SERVICES ===== */
+.services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
@@ -84,41 +109,55 @@ padding:30px;
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
 text-align:center;
+transition:.3s;
 }
 
-.card h3{
-margin:20px 0;
+.card:hover{
+transform:translateY(-10px);
 }
 
+/* ===== GALLERY ===== */
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
 .gallery img{
 width:100%;
-height:350px;
+height:320px;
 object-fit:cover;
 border-radius:15px;
 }
 
+/* ===== ABOUT ===== */
+.about{
+text-align:center;
+max-width:900px;
+margin:auto;
+line-height:2;
+font-size:18px;
+color:#444;
+}
+
+/* ===== CONTACT ===== */
 .contact{
-background:#8b5e34;
+background:#1f4d36;
 color:white;
 text-align:center;
 }
 
 .contact p{
-margin:15px 0;
-font-size:20px;
+margin:10px 0;
+font-size:18px;
 }
 
+/* ===== FOOTER ===== */
 footer{
-background:#222;
-color:#bbb;
-padding:20px;
+background:#111;
+color:#aaa;
 text-align:center;
+padding:20px;
 }
 
 </style>
@@ -127,80 +166,93 @@ text-align:center;
 
 <body>
 
-<header>
+<!-- HERO -->
+<header class="hero">
 
-<div class="hero">
+<div class="hero-content">
 
 <h1>مزون حفصه</h1>
 
+<div class="line"></div>
+
 <p>
-طراحی و دوخت لباس‌های زنانه بومی قشم
-با حفظ اصالت، زیبایی و هنر دست بانوان جزیره
+طراحی و دوخت لباس‌های زنانه بومی قشم<br>
+با الهام از فرهنگ جنوب و هنر دست بانوان جزیره
 </p>
 
-<a href="#gallery" class="btn">مشاهده نمونه‌کارها</a>
+<a class="btn" href="#gallery">مشاهده نمونه‌کارها</a>
 
 </div>
 
 </header>
 
+<!-- ABOUT -->
+<section>
+
+<h2 class="title">درباره ما</h2>
+
+<p class="about">
+مزون حفصه با هدف حفظ اصالت لباس‌های زنانه بومی قشم فعالیت می‌کند.
+ما با استفاده از طرح‌های سنتی جنوب و دوخت حرفه‌ای، لباس‌هایی خاص و اصیل برای بانوان طراحی می‌کنیم.
+</p>
+
+</section>
+
+<!-- SERVICES -->
 <section>
 
 <h2 class="title">خدمات ما</h2>
 
-<div class="cards">
+<div class="services">
 
 <div class="card">
-<h3>دوخت لباس بومی قشم</h3>
-<p>دوخت انواع لباس‌های سنتی زنانه با ظرافت و کیفیت بالا.</p>
+<h3>دوخت لباس بومی</h3>
+<p>طراحی و دوخت لباس‌های سنتی قشم با کیفیت بالا.</p>
 </div>
 
 <div class="card">
-<h3>دوخت سفارشی</h3>
-<p>دوخت لباس مطابق سلیقه، سایز و انتخاب پارچه شما.</p>
+<h3>سفارش اختصاصی</h3>
+<p>لباس کاملاً مطابق سلیقه و سایز مشتری.</p>
 </div>
 
 <div class="card">
-<h3>لباس مناسب مراسم</h3>
-<p>لباس‌های مناسب جشن‌ها، مراسم محلی و مناسبت‌های ویژه.</p>
+<h3>لباس مجلسی محلی</h3>
+<p>طراحی لباس‌های خاص برای مراسم و جشن‌ها.</p>
 </div>
 
 </div>
 
 </section>
 
-<section>
+<!-- GALLERY -->
+<section id="gallery">
 
-<h2 class="title">نمونه کارها</h2>
+<h2 class="title">نمونه‌کارها</h2>
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80">
-
-<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80">
-
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80">
+<img src="images/work1.jpg">
+<img src="images/work2.jpg">
+<img src="images/work3.jpg">
+<img src="images/work4.jpg">
 
 </div>
 
 </section>
 
-<section id="contact" class="contact">
+<!-- CONTACT -->
+<section class="contact">
 
-<h2 class="title" style="color:white;">ارتباط با مزون حفصه</h2>
-
-<p>📞 09xxxxxxxxx</p>
+<h2 class="title" style="color:white;">تماس با ما</h2>
 
 <p>📍 جزیره قشم</p>
-
-<p>جهت سفارش و هماهنگی از طریق تماس یا واتساپ با ما در ارتباط باشید.</p>
+<p>📞 09xxxxxxxxx</p>
+<p>📷 Instagram: @hafez_muzon</p>
 
 </section>
 
 <footer>
-
-تمامی حقوق این سایت محفوظ است © 2026
-
+© تمام حقوق برای مزون حفصه محفوظ است
 </footer>
 
 </body>
